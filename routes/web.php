@@ -32,3 +32,5 @@ Route::get('auth/facebook/callback',
 
 Route::get('login/google', 'GoogleController@redirectToProvider')->name('google.login');
 Route::get('login/google/callback', 'GoogleController@handleProviderCallback');
+
+Route::get('relationship', 'TaskController@test');
