@@ -18,10 +18,7 @@ Route::get('/', function () {
 Route::get('test', 'MailController@sendEmail');
 Auth::routes();
 
-Route::get('tasks', function() {
-	$tasks = DB::table('tasks')->get();
-	dd($tasks);
-});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('auth/facebook', ['as' => 'auth/facebook', 'uses' => 'Auth\LoginController@redirectToProvider']);
@@ -34,3 +31,5 @@ Route::get('login/google', 'GoogleController@redirectToProvider')->name('google.
 Route::get('login/google/callback', 'GoogleController@handleProviderCallback');
 
 Route::get('relationship', 'TaskController@test');
+
+Route::resource('tasks', 'TaskController');
